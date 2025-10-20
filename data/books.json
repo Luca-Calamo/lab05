@@ -1,0 +1,83 @@
+[
+    {
+      "title": "Effective JavaScript",
+      "subtitle": "68 Specific Ways to Harness the Power of JavaScript",
+      "isbn13": "9780321812186",
+      "price": "$21.99",
+      "image": "https://itbook.store/img/books/9780321812186.png",
+      "url": "https://itbook.store/books/9780321812186"
+    },
+    {
+      "title": "Beginning JavaScript, 3nd Edition",
+      "subtitle": "The Ultimate Guide to Modern JavaScript Development",
+      "isbn13": "9781484243947",
+      "price": "$19.02",
+      "image": "https://itbook.store/img/books/9781484243947.png",
+      "url": "https://itbook.store/books/9781484243947"
+    },
+    {
+      "title": "Learn Enough JavaScript to Be Dangerous",
+      "subtitle": "Write Programs, Publish Packages, and Develop Interactive Websites with JavaScript",
+      "isbn13": "9780137843749",
+      "price": "$31.98",
+      "image": "https://itbook.store/img/books/9780137843749.png",
+      "url": "https://itbook.store/books/9780137843749"
+    },
+    {
+      "title": "Test-Driven JavaScript Development",
+      "subtitle": "",
+      "isbn13": "9780321683915",
+      "price": "$10.29",
+      "image": "https://itbook.store/img/books/9780321683915.png",
+      "url": "https://itbook.store/books/9780321683915"
+    },
+    {
+      "title": "Learning JavaScript",
+      "subtitle": "A Hands-On Guide to the Fundamentals of Modern JavaScript",
+      "isbn13": "9780321832740",
+      "price": "$8.99",
+      "image": "https://itbook.store/img/books/9780321832740.png",
+      "url": "https://itbook.store/books/9780321832740"
+    },
+    {
+      "title": "jQuery and JavaScript Phrasebook",
+      "subtitle": "",
+      "isbn13": "9780321918963",
+      "price": "$14.48",
+      "image": "https://itbook.store/img/books/9780321918963.png",
+      "url": "https://itbook.store/books/9780321918963"
+    },
+    {
+      "title": "JavaScript: The Good Parts",
+      "subtitle": "Unearthing the Excellence in JavaScript",
+      "isbn13": "9780596517748",
+      "price": "$4.37",
+      "image": "https://itbook.store/img/books/9780596517748.png",
+      "url": "https://itbook.store/books/9780596517748"
+    },
+    {
+      "title": "Head First JavaScript",
+      "subtitle": "A Learner's Companion to JavaScript",
+      "isbn13": "9780596527747",
+      "price": "$7.72",
+      "image": "https://itbook.store/img/books/9780596527747.png",
+      "url": "https://itbook.store/books/9780596527747"
+    },
+    {
+      "title": "High Performance JavaScript",
+      "subtitle": "Build Faster Web Application Interfaces",
+      "isbn13": "9780596802790",
+      "price": "$19.59",
+      "image": "https://itbook.store/img/books/9780596802790.png",
+      "url": "https://itbook.store/books/9780596802790"
+    },
+    {
+      "title": "Building iPhone Apps with HTML, CSS, and JavaScript",
+      "subtitle": "Making App Store Apps Without Objective-C or Cocoa",
+      "isbn13": "9780596805784",
+      "price": "$5.00",
+      "image": "https://itbook.store/img/books/9780596805784.png",
+      "url": "https://itbook.store/books/9780596805784"
+    }
+    
+  ]
