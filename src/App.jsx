@@ -3,6 +3,8 @@ import Book from './Book';
 import Header from './Header';
 import New from './New';
 import Footer from './Footer';
+import Modal from './Modal';
+import ProductForm from './ProductForm';
 import './App.css';
 
 function App() {
@@ -81,7 +83,7 @@ function App() {
             <div className='content'>
                 <div className='new_grid'>
                     <New title='New' onSubmit={handleBookSubmit} />
-                    <div className='filters'>
+                    <div className='button-column'>
                         <input
                             type='text'
                             placeholder='Search books...'
@@ -104,111 +106,29 @@ function App() {
                                     </option>
                                 ))}
                         </select>
+                        <Modal
+                            btnLabel='Edit'
+                            btnClassName='btn secondary'
+                            disabled={!selectedBookId}
+                        >
+                            {(closeModal) => (
+                                <ProductForm
+                                    onSubmit={(formData) => {
+                                        handleUpdateBook(formData);
+                                        closeModal();
+                                    }}
+                                    onClose={closeModal}
+                                />
+                            )}
+                        </Modal>
+                        <button
+                            className='btn danger'
+                            onClick={handleDeleteBook}
+                            disabled={!selectedBookId}
+                        >
+                            Delete
+                        </button>
                     </div>
-                    <button
-                        className='btn secondary'
-                        onClick={() => {
-                            if (selectedBookId) {
-                                const book = books.find(
-                                    (b) => b.isbn13 === selectedBookId
-                                );
-                                if (book) {
-                                    const formContainer =
-                                        document.createElement('div');
-                                    formContainer.className = 'form-container';
-
-                                    const form = document.createElement('form');
-                                    form.id = 'edit-form';
-
-                                    const formContent = `
-                                        <h2>Edit Book</h2>
-                                        <div class="form-control">
-                                            <label>Title:</label>
-                                            <input name="bk-title" type="text" value="${
-                                                book.title
-                                            }" />
-                                        </div>
-                                        <div class="form-control">
-                                            <label>Author:</label>
-                                            <input name="bk-author" type="text" value="${
-                                                book.author
-                                            }" />
-                                        </div>
-                                        <div class="form-control">
-                                            <label>Publisher:</label>
-                                            <input name="bk-publisher" type="text" value="${
-                                                book.publisher
-                                            }" />
-                                        </div>
-                                        <div class="form-control">
-                                            <label>Publication Year:</label>
-                                            <input name="bk-pub-year" type="number" value="${
-                                                book.year
-                                            }" />
-                                        </div>
-                                        <div class="form-control">
-                                            <label>Language:</label>
-                                            <input name="bk-language" type="text" value="${
-                                                book.language
-                                            }" />
-                                        </div>
-                                        <div class="form-control">
-                                            <label>Pages:</label>
-                                            <input name="bk-pages" type="number" value="${
-                                                book.pages
-                                            }" />
-                                        </div>
-                                        <div class="form-control">
-                                            <label>URL (book cover):</label>
-                                            <input name="bk-image" type="url" value="${
-                                                book.image || ''
-                                            }" />
-                                        </div>
-                                        <button type="submit" class="btn primary">Save</button>
-                                        <button type="button" class="btn secondary">Cancel</button>
-                                    `;
-
-                                    form.innerHTML = formContent;
-
-                                    // Add cancel button handler
-                                    const cancelButton =
-                                        form.querySelector('.btn.secondary');
-                                    cancelButton.onclick = () =>
-                                        formContainer.remove();
-
-                                    formContainer.appendChild(form);
-                                    document.body.appendChild(formContainer);
-
-                                    form.onsubmit = (e) => {
-                                        e.preventDefault();
-                                        const formData = new FormData(e.target);
-                                        handleUpdateBook({
-                                            title: formData.get('bk-title'),
-                                            author: formData.get('bk-author'),
-                                            publisher:
-                                                formData.get('bk-publisher'),
-                                            year: formData.get('bk-pub-year'),
-                                            language:
-                                                formData.get('bk-language'),
-                                            pages: formData.get('bk-pages'),
-                                            image: formData.get('bk-image'),
-                                        });
-                                        formContainer.remove();
-                                    };
-                                }
-                            }
-                        }}
-                        disabled={!selectedBookId}
-                    >
-                        Edit
-                    </button>
-                    <button
-                        className='btn danger'
-                        onClick={handleDeleteBook}
-                        disabled={!selectedBookId}
-                    >
-                        Delete
-                    </button>
                 </div>
                 <div className='books-grid'>
                     {books

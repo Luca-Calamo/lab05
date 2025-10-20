@@ -6,8 +6,14 @@
 
 .new_grid {
     display: flex;
+    gap: 0.8em;
+}
+
+.button-column {
+    display: flex;
     flex-direction: column;
     gap: 0.8em;
+    width: 200px;
 }
 
 .btn {
@@ -34,12 +40,6 @@
 
 .btn:hover:not(:disabled) {
     opacity: 0.9;
-}
-
-.filters {
-    display: flex;
-    gap: 1em;
-    margin-bottom: 1em;
 }
 
 .search-input,
