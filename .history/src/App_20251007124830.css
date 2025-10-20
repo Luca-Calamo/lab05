@@ -1,0 +1,33 @@
+.books-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.book-controls {
+    display: flex;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.btn {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.4em;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn.secondary {
+    background-color: rgb(202, 255, 242);
+}
+
+.btn.danger {
+    background-color: #ffc3c3;
+}

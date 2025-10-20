@@ -1,0 +1,193 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(255, 250, 209);
+}
+
+/* HEADER */
+.heading {
+    text-align: center;
+    background-color: #ffc2c2;
+    padding: 0.5em;
+    height: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CONTENT GRID */
+.content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2em;
+    padding: 1em;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* new item container*/
+.new_container {
+    grid-row: 1/8;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    width: 200px;
+    height: 300px;
+    cursor: pointer;
+    background: white;
+    font-weight: bold;
+}
+
+.new_grid {
+    grid-row: 1/8;
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.8em;
+}
+
+.edit-btn,
+.delete-btn {
+    height: 2.5em;
+    border-radius: 0.4em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: rgb(202, 255, 242);
+}
+
+.delete-btn {
+    background-color: #ffc3c3;
+}
+
+/* book container */
+.container {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    border-radius: 0.4em;
+    padding: 0.4em;
+    background-color: #ffc2c2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* prevents overflow */
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* image */
+.image {
+    flex: 0 0 150px; /* fixed height for image */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 0.3em;
+}
+
+/* info section */
+.info {
+    flex: 1; /* remaining space for text */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.info h3 {
+    font-size: 0.9em;
+    margin: 0.5em 0;
+    padding: 0 0.2em;
+    line-height: 1.2em;
+    max-height: 2.4em; /* max 2 lines */
+    overflow: hidden;
+    text-overflow: ellipsis; /* adds "..." for overflow */
+    white-space: normal;
+    word-break: break-word;
+}
+
+/* price */
+.price {
+    margin-top: auto; /* sticks to bottom */
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+
+/* books buttons */
+
+.remove-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.remove-btn:hover {
+    background: rgb(228, 98, 98);
+    cursor: crosshair;
+}
+
+.learn-more {
+    background-color: rgb(181, 181, 247);
+    width: 80%;
+    height: 10%;
+    filter: drop-shadow(0px 5px 10px rgba(56, 41, 41, 0.5));
+    cursor: crosshair;
+}
+
+.book-link {
+    cursor: crosshair;
+}
+.book-link:hover,
+.learn-more:hover {
+    background: rgb(138, 255, 144);
+}
+
+.form-container {
+    padding: 1em;
+    /* display: flex; */
+}
+
+.form-control {
+    padding: 0.5em;
+    > input {
+        margin-left: 1em;
+    }
+}
+
+/* LINKS */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* FOOTER */
+.footer {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #ffc2c2;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    margin-top: auto;
+}
+
+/* BOOK SELECTION */
+.container.selected {
+    background-color: #bc7070;
+}

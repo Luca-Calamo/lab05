@@ -1,0 +1,58 @@
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1em;
+}
+
+.new_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+.btn {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.4em;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn.secondary {
+    background-color: rgb(202, 255, 242);
+}
+
+.btn.danger {
+    background-color: #ffc3c3;
+}
+
+.btn:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+.btn {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.4em;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn.secondary {
+    background-color: rgb(202, 255, 242);
+}
+
+.btn.danger {
+    background-color: #ffc3c3;
+}
