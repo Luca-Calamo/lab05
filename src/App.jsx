@@ -111,15 +111,21 @@ function App() {
                             btnClassName='btn secondary'
                             disabled={!selectedBookId}
                         >
-                            {(closeModal) => (
-                                <ProductForm
-                                    onSubmit={(formData) => {
-                                        handleUpdateBook(formData);
-                                        closeModal();
-                                    }}
-                                    onClose={closeModal}
-                                />
-                            )}
+                            {(closeModal) => {
+                                const selectedBook = books.find(
+                                    (book) => book.isbn13 === selectedBookId
+                                );
+                                return (
+                                    <ProductForm
+                                        onSubmit={(formData) => {
+                                            handleUpdateBook(formData);
+                                            closeModal();
+                                        }}
+                                        onClose={closeModal}
+                                        initialData={selectedBook}
+                                    />
+                                );
+                            }}
                         </Modal>
                         <button
                             className='btn danger'

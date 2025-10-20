@@ -1,9 +1,9 @@
-function ProductForm({ onSubmit, onClose }) {
+function ProductForm({ onSubmit, onClose, initialData }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
 
-        const newBook = {
+        const bookData = {
             title: formData.get('bk-title'),
             author: formData.get('bk-author'),
             publisher: formData.get('bk-publisher'),
@@ -13,14 +13,14 @@ function ProductForm({ onSubmit, onClose }) {
             image: formData.get('bk-image'),
         };
 
-        onSubmit(newBook);
-        e.target.reset();
+        onSubmit(bookData);
+        e.target.reset(); // Reset the form
         if (onClose) onClose();
     };
 
     return (
         <div className='form-container'>
-            <h2>New Book</h2>
+            <h2>{initialData ? 'Edit Book' : 'New Book'}</h2>
             <form onSubmit={handleSubmit}>
                 <div className='form-control'>
                     <label>Title</label>
@@ -28,6 +28,7 @@ function ProductForm({ onSubmit, onClose }) {
                         name='bk-title'
                         type='text'
                         placeholder='Book Title...'
+                        defaultValue={initialData?.title || ''}
                     />
                 </div>
                 <div className='form-control'>
@@ -36,6 +37,7 @@ function ProductForm({ onSubmit, onClose }) {
                         name='bk-author'
                         type='text'
                         placeholder='Author...'
+                        defaultValue={initialData?.author || ''}
                     />
                 </div>
                 <div className='form-control'>
@@ -44,11 +46,16 @@ function ProductForm({ onSubmit, onClose }) {
                         name='bk-publisher'
                         type='text'
                         placeholder='Publisher...'
+                        defaultValue={initialData?.publisher || ''}
                     />
                 </div>
                 <div className='form-control'>
                     <label>Publication Year</label>
-                    <input name='bk-pub-year' type='number' />
+                    <input
+                        name='bk-pub-year'
+                        type='number'
+                        defaultValue={initialData?.year || ''}
+                    />
                 </div>
                 <div className='form-control'>
                     <label>Language</label>
@@ -56,11 +63,16 @@ function ProductForm({ onSubmit, onClose }) {
                         name='bk-language'
                         type='text'
                         placeholder='Language...'
+                        defaultValue={initialData?.language || ''}
                     />
                 </div>
                 <div className='form-control'>
                     <label>Pages</label>
-                    <input name='bk-pages' type='number' />
+                    <input
+                        name='bk-pages'
+                        type='number'
+                        defaultValue={initialData?.pages || ''}
+                    />
                 </div>
                 <div className='form-control'>
                     <label>URL (book cover)</label>
@@ -68,6 +80,7 @@ function ProductForm({ onSubmit, onClose }) {
                         name='bk-image'
                         type='url'
                         placeholder='Optional: Enter image URL'
+                        defaultValue={initialData?.image || ''}
                     />
                 </div>
                 <button type='submit' className='btn primary'>

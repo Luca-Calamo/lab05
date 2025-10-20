@@ -1,10 +1,12 @@
 import { useRef } from 'react';
 
-function Modal({ btnLabel, btnClassName, children }) {
+function Modal({ btnLabel, btnClassName, children, disabled }) {
     const modalRef = useRef();
 
     function openModal() {
-        modalRef.current.showModal();
+        if (!disabled) {
+            modalRef.current.showModal();
+        }
     }
 
     function closeModal() {
@@ -13,7 +15,11 @@ function Modal({ btnLabel, btnClassName, children }) {
 
     return (
         <>
-            <button onClick={openModal} className={btnClassName}>
+            <button
+                onClick={openModal}
+                className={btnClassName}
+                disabled={disabled}
+            >
                 {btnLabel}
             </button>
             <dialog ref={modalRef}>
