@@ -36,23 +36,43 @@
     opacity: 0.9;
 }
 
-.btn {
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 0.4em;
-    cursor: pointer;
-    font-weight: bold;
+.filters {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1em;
 }
 
-.btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+.search-input,
+.language-filter {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.4em;
+    font-size: 1em;
+    flex: 1;
+}
+
+.search-input:focus,
+.language-filter:focus {
+    outline: none;
+    border-color: rgb(202, 255, 242);
+}
+
+.form-container {
+    padding: 1em;
+}
+
+.form-control {
+    padding: 0.5em;
+}
+
+.form-control input {
+    margin-left: 1em;
+}
+
+.btn.primary {
+    background-color: rgb(202, 255, 242);
 }
 
 .btn.secondary {
     background-color: rgb(202, 255, 242);
-}
-
-.btn.danger {
-    background-color: #ffc3c3;
 }
